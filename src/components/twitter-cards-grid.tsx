@@ -488,7 +488,7 @@ const titleVariants: Variants = {
       <footer className={`py-6 ${darkMode ? 'border-gray-800 bg-black' : 'border-gray-200 bg-white'} border-t mt-8`}>
         <div className="container mx-auto px-4 text-center">
           <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>
-            Built with React, TypeScript, and Framer Motion
+            Built with React, TypeScript, and Framer Motion by @saxenaa
           </p>
         </div>
       </footer>
