@@ -190,7 +190,7 @@ const TwitterCardsGrid = () => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        type: "spring",
+        type: "spring"  as const,
         stiffness: 200,
         damping: 10
       }
