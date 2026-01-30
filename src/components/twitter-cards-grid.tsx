@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { TwitterCard } from './ui/twitter-card';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Variants } from "framer-motion";
 
 const TwitterCardsGrid = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -183,28 +184,33 @@ const TwitterCardsGrid = () => {
   };
 
   // Title text animation variants
-  const titleVariants = {
-    initial: { y: -20, opacity: 0 },
-    animate: { 
-      y: 0, 
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        type: "spring"  as const,
-        stiffness: 200,
-        damping: 10
-      }
+const titleVariants: Variants = {
+  initial: {
+    y: -20,
+    opacity: 0,
+  },
+
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+      damping: 10,
     },
-    hover: { 
-      scale: 1.05,
-      textShadow: "0px 0px 8px rgb(155, 107, 254, 0.3)",
-      transition: {
-        duration: 0.3,
-        yoyo: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
+  },
+
+  hover: {
+    scale: 1.05,
+    textShadow: "0px 0px 8px rgba(155, 107, 254, 0.3)",
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut" as const,
+      repeat: Infinity,
+      repeatType: "reverse",
+    },
+  },
+};
 
   // Define card animation variants
   const cardVariants = {
